@@ -1,0 +1,10 @@
+{
+  "default": "en",
+  "fallback": "en",
+  "languages": [
+    {"code": "zh", "tag": "zh-CN", "label": "中文", "enabled": true, "direction": "ltr", "guide": "cn"},
+    {"code": "en", "tag": "en", "label": "English", "enabled": true, "direction": "ltr", "guide": "en"},
+    {"code": "ru", "tag": "ru", "label": "Русский", "enabled": false, "direction": "ltr", "guide": "en"},
+    {"code": "es", "tag": "es", "label": "Español", "enabled": false, "direction": "ltr", "guide": "en"}
+  ]
+}

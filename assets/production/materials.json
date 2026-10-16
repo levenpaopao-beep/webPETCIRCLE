@@ -1,0 +1,93 @@
+[
+  {
+    "id": "54",
+    "titleZh": "样衣缝制",
+    "titleEn": "Sample Sewing",
+    "source": "/Users/levenwong/Desktop/工厂实力图片/微信图片_20261015174009_54_1.jpg",
+    "image": "sample-sewing-tidied-v2.png",
+    "captionZh": "样衣与缝制作业现场。",
+    "captionEn": "A look inside our sample sewing workspace.",
+    "status": "AI整理宣传图，待人工核对",
+    "use": "关于我们/生产实力"
+  },
+  {
+    "id": "57",
+    "titleZh": "绣花工艺",
+    "titleEn": "Embroidery",
+    "source": "/Users/levenwong/Desktop/工厂实力图片/微信图片_20261015174017_57_1.jpg",
+    "image": "embroidery-tidied-v2.png",
+    "captionZh": "多头绣花设备及作业现场。",
+    "captionEn": "Multi-head embroidery equipment and work in progress.",
+    "status": "AI整理宣传图，待人工核对",
+    "use": "关于我们/生产实力",
+    "reviewNote": "机头下单片平铺，叠料仅放独立侧桌；旧版绣花图不可用于官网。"
+  },
+  {
+    "id": "60",
+    "titleZh": "后道整理",
+    "titleEn": "Finishing",
+    "source": "/Users/levenwong/Desktop/工厂实力图片/微信图片_20261015174036_60_1.jpg",
+    "image": "finishing-tidied.png",
+    "captionZh": "服装熨烫与后道整理作业区域。",
+    "captionEn": "Garment pressing and finishing workspace.",
+    "status": "AI整理宣传图，待人工核对",
+    "use": "关于我们/生产实力"
+  },
+  {
+    "id": "62",
+    "titleZh": "仓储供应",
+    "titleEn": "Warehousing",
+    "source": "/Users/levenwong/Desktop/工厂实力图片/微信图片_20261015174038_62_1.jpg",
+    "image": "warehouse-tidied.png",
+    "captionZh": "货品分类存放与货位管理现场。",
+    "captionEn": "Organized garment storage with location identification.",
+    "status": "AI整理宣传图，待人工核对",
+    "use": "关于我们/生产实力"
+  },
+  {
+    "id": "68",
+    "titleZh": "针织生产",
+    "titleEn": "Knitting",
+    "source": "/Users/levenwong/Desktop/工厂实力图片/微信图片_20261015174208_68_1.jpg",
+    "image": "knitting-tidied.png",
+    "captionZh": "电脑横机及针织生产现场。",
+    "captionEn": "Computerized flat knitting equipment on the workshop floor.",
+    "status": "AI整理宣传图，待人工核对",
+    "use": "关于我们/生产实力"
+  },
+  {
+    "id": "72",
+    "titleZh": "缝制生产",
+    "titleEn": "Sewing Production",
+    "source": "/Users/levenwong/Desktop/工厂实力图片/微信图片_20261015174211_72_1.jpg",
+    "image": "sewing-line-tidied.png",
+    "captionZh": "配有吊挂输送系统的缝制作业现场。",
+    "captionEn": "Sewing workstations with an overhead hanger system.",
+    "status": "AI整理宣传图，待人工核对",
+    "use": "关于我们/生产实力"
+  },
+  {
+    "id": "66",
+    "titleZh": "展会团队",
+    "titleEn": "Our Team at Exhibitions",
+    "source": "/Users/levenwong/Desktop/工厂实力图片/微信图片_20261015174147_66_1.jpg",
+    "image": "exhibition-team-original.jpg",
+    "captionZh": "PETCIRCLE 展位与团队合影。",
+    "captionEn": "The PETCIRCLE team at our exhibition booth.",
+    "status": "采用真实原图",
+    "use": "关于我们/品牌与展会",
+    "reviewNote": "合影及客户交流照片使用原图，避免AI改变人物与产品。"
+  },
+  {
+    "id": "67",
+    "titleZh": "产品展示与交流",
+    "titleEn": "Product Displays and Conversations",
+    "source": "/Users/levenwong/Desktop/工厂实力图片/微信图片_20261015174148_67_1.jpg",
+    "image": "exhibition-products-original.jpg",
+    "captionZh": "PETCIRCLE 展位产品陈列与现场交流。",
+    "captionEn": "Pet apparel displays and conversations at the PETCIRCLE booth.",
+    "status": "采用真实原图",
+    "use": "关于我们/品牌与展会",
+    "reviewNote": "合影及客户交流照片使用原图，避免AI改变人物与产品。"
+  }
+]

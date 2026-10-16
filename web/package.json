@@ -1,0 +1,24 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "preview": "vite preview",
+    "test:sites": "node --test tests/sites-worker.test.mjs",
+    "check:languages": "node --test tests/i18n.test.mjs tests/language-quality.test.mjs",
+    "prebuild": "npm run check:languages && npm run check:visual-system",
+    "check:release": "npm run check:languages && python3 ../scripts/check_language_release.py",
+    "test:products": "node --test tests/product-components.test.mjs",
+    "check:visual-system": "node --test tests/visual-system.test.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@vitejs/plugin-react": "5.0.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "vite": "6.4.2"
+  }
+}

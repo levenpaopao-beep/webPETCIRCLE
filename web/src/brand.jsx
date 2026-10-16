@@ -1,0 +1,2 @@
+import React from 'react';
+export function BrandMark({t,footer=false}){return <a className={'wordmark brand-mark '+(footer?'brand-footer':'brand-header')} href="#/home" aria-label={t("PETCIRCLE home")}><img className="brand-graphic" src={'/brand/petcircle-'+(footer?'footer':'header')+'-original-v1.svg'} alt="" aria-hidden="true"/><span className="brand-letters">PETCIRCLE<sup className="brand-registered" aria-hidden="true">®</sup></span></a>}

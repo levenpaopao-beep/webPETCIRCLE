@@ -1,0 +1,22 @@
+node_modules/
+node_modules
+.local/
+web/dist/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local secrets, runtime data and generated records
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.log
+*.pem
+*.key
+outputs/
+design/qa/

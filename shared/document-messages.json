@@ -1,0 +1,78 @@
+{
+  "zh": {
+    "title": "客户报价",
+    "sheet": "客户报价",
+    "pdfHeads": [
+      "图片",
+      "款号 / 产品",
+      "颜色 / 尺码",
+      "数量",
+      "单价",
+      "金额",
+      "装箱参考"
+    ],
+    "xlsxHeads": [
+      "产品图片",
+      "款号",
+      "产品名称",
+      "颜色",
+      "尺码",
+      "数量",
+      "单价",
+      "金额",
+      "单件重量(g)",
+      "参考每箱件数",
+      "参考外箱尺寸"
+    ],
+    "pending": "待确认",
+    "quantity": "总数量",
+    "total": "总额",
+    "sum": "合计",
+    "packing": "装箱参考，实际箱数、重量及运输另行确认。",
+    "terms": "付款、运费和出货安排请联系确认。",
+    "xlsxTerms": "付款、运费和出货安排请联系确认。",
+    "guideSheet": "尺码参考",
+    "pieces": "件",
+    "grams": "克",
+    "wechat": "微信"
+  },
+  "en": {
+    "title": "QUOTATION",
+    "sheet": "Quotation",
+    "pdfHeads": [
+      "Photo",
+      "Code / Product",
+      "Color / Size",
+      "Qty",
+      "Unit price",
+      "Amount",
+      "Packing reference"
+    ],
+    "xlsxHeads": [
+      "Photo",
+      "Product code",
+      "Product",
+      "Color",
+      "Size",
+      "Quantity",
+      "Unit price",
+      "Amount",
+      "Unit weight (g)",
+      "Pieces per carton (reference)",
+      "Carton dimensions (reference)"
+    ],
+    "pending": "Subject to confirmation",
+    "quantity": "Total quantity",
+    "total": "Total",
+    "sum": "Total",
+    "packing": "Packing reference only. Actual cartons, weight and shipping are subject to confirmation.",
+    "terms": "Please contact us to confirm payment, shipping costs and dispatch arrangements.",
+    "xlsxTerms": "Please contact us to confirm payment, shipping costs and dispatch arrangements.",
+    "guideSheet": "Size Guide",
+    "pieces": "pcs",
+    "grams": "g",
+    "wechat": "WeChat"
+  },
+  "ru": {},
+  "es": {}
+}

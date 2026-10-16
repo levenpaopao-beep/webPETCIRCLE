@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {build} from 'esbuild';
+import {fileURLToPath} from 'node:url';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);
+globalThis.document={documentElement:{lang:'en'}};
+globalThis.location={hash:'#/collection'};
+const {outputFiles}=await build({stdin:{contents:`import React from 'react';import {renderToStaticMarkup} from 'react-dom/server';import {ProductModal,QuickSelect} from './src/customer.jsx';import {ProductCard,Home,Collection} from './src/pages.jsx';import {translator} from './src/i18n.js';import {BrandMark} from './src/brand.jsx';export const render=(component,p,lang,options={})=>renderToStaticMarkup(React.createElement(({ProductModal,QuickSelect,ProductCard,Home,Collection,BrandMark})[component],{p,lang,t:translator(lang),add:()=>{},notify:()=>{},close:()=>{},open:()=>{},categories:[],go:()=>{},setProduct:()=>{},...options}));`,resolveDir:fileURLToPath(new URL('..',import.meta.url))},bundle:true,platform:'node',format:'cjs',write:false,external:['react','react-dom/server']});
+const mod={exports:{}};new Function('require','module','exports',outputFiles[0].text)(require,mod,mod.exports);
+const p={code:'TEST',nameZh:'测试款',nameEn:'Test style',currency:'USD',inStock:true,image:'/main.jpg',images:['/main.jpg','/other.jpg'],descriptionZh:'中文描述',descriptionEn:'English description',variants:[{sku:'TEST-S',size:'S',color:'红色',colorEn:'Red',inStock:true,price:2,tiers:[2,1.94,1.9]}]};
+test('详情按语言选尺码表，描述在尺码表前，图库保留多张图片',()=>{const en=mod.exports.render('ProductModal',p,'en'),zh=mod.exports.render('ProductModal',p,'zh');assert(en.includes('/media/guides/size-guide-en.jpeg'));assert(!en.includes('size-guide-cn.jpeg'));assert(zh.includes('size-guide-cn.jpeg'));assert(en.indexOf('English description')<en.indexOf('<details class="size-guide"'));assert(en.includes('/other.jpg'));const custom=mod.exports.render('ProductModal',{...p,guideZh:'/chinese.jpg',guideEn:'/english.jpg'},'en');assert(custom.includes('/english.jpg'));assert(!custom.includes('/chinese.jpg'))});
+test('列表快速选款使用同一套规格数量和加入询价单控件',()=>{const card=mod.exports.render('ProductCard',p,'en'),quick=mod.exports.render('QuickSelect',p,'en');assert(card.includes('Quick select'));assert(card.includes('aria-expanded="false"'));assert(quick.includes('TEST-S'));assert(quick.includes('type="number"'));assert(quick.includes('Add to quote'));assert(!quick.includes('size-guide'));assert(quick.includes('Red'));assert(!quick.includes('红色'))});
+
+test('首页分类入口跟随ERP导入后的分类编号、改名及移除',()=>{const en=mod.exports.render('Home',p,'en',{categories:[{id:'erp-knit',zh:'精选毛衣',en:'Selected Knitwear',publishedCount:1,sourceNames:['毛衣']}]});assert(en.includes('#/collection?category=erp-knit'));assert(en.includes('Selected Knitwear'));assert(!en.includes('#/collection?category=knitwear'));const empty=mod.exports.render('Home',p,'en',{categories:[]});assert(!empty.includes('class="category-tile"'))});
+
+test('产品目录分类在左侧独立导航，右侧保留分类标题与搜索',()=>{const html=mod.exports.render('Collection',p,'en',{categories:[{id:'long',publishedCount:1,zh:'圆领衫及卫衣',en:'Crewnecks, Sweatshirts & Hoodies'}]});assert(html.indexOf('collection-sidebar')<html.indexOf('collection-results'));assert(html.includes('Crewnecks, Sweatshirts &amp; Hoodies'));assert(html.includes('aria-controls="collection-category-list"'));assert(html.includes('collection-results-toolbar'));assert(html.includes('Search products'));assert(!html.includes('category-tabs'))});
+
+test('前台分类隐藏没有上架商品的分类，搜索无结果不改变分类名单',()=>{const html=mod.exports.render('Collection',p,'en',{categories:[{id:'yes',zh:'有产品',en:'Published styles',publishedCount:1},{id:'none',zh:'未上架',en:'Draft-only category',publishedCount:0}]});assert(html.includes('Published styles'));assert(!html.includes('Draft-only category'));assert(html.includes('All products'))});
+
+test('顶栏及页脚文字商标含独立右上角注册符号并分别调用原始图形',()=>{for(const footer of [false,true]){const html=mod.exports.render('BrandMark',p,'en',{footer});assert(html.includes('PETCIRCLE<sup'));assert(html.includes('®</sup>'));assert(html.includes('/brand/petcircle-'+(footer?'footer':'header')+'-original-v1.svg'));assert(html.includes('alt=""'));assert.equal((html.match(/brand-registered/g)||[]).length,1)}});
